@@ -17,3 +17,5 @@ This is a C# Console Application designed to educate users on essential cybersec
 * **Language:** C#
 * **Framework:** .NET 9.0+
 * **Version Control:** Managed via GitHub with automated CI/CD.
+  
+* **Submission Note:** This project meets all Part 1 requirements including logic, multimedia, and CI/CD.
