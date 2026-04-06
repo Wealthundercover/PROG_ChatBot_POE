@@ -6,7 +6,7 @@ namespace CybersecurityChatbot
 {
     public class UserInterface
     {
-        // ADDED: Method to play the audio (Task 1)
+        // ADDED: Method to play the audio 
         public static void PlayVoiceGreeting()
         {
             try
@@ -33,7 +33,7 @@ namespace CybersecurityChatbot
             }
         }
 
-        // Your existing logo method
+        //  logo method
         public static void DisplayHeader()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -54,7 +54,7 @@ namespace CybersecurityChatbot
             Console.ResetColor();
         }
 
-        // Your existing greeting method
+        //  greeting method
         public static void GreetUser()
         {
             Console.WriteLine("\n[SYSTEM]: Initializing secure connection...");

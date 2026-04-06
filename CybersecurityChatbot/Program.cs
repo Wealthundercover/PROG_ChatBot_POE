@@ -1,11 +1,28 @@
 ﻿using CybersecurityChatbot;
 
-// 1. Call the audio method first!
+// Multimedia Setup
 UserInterface.PlayVoiceGreeting();
-
-// 2. Then show the visuals
 UserInterface.DisplayHeader();
-UserInterface.GreetUser();
 
-Console.WriteLine("Press any key to exit...");
+// Initialize the "Brain"
+ChatbotEngine bot = new ChatbotEngine();
+
+// Interaction
+UserInterface.GreetUser();
+bot.GetUserName();
+
+// Loop to keep the chat going
+bool isRunning = true;
+while (isRunning)
+{
+    Console.Write($"{bot.UserName} > ");
+    string userRequest = Console.ReadLine();
+
+    if (userRequest?.ToLower() == "exit") break;
+
+    bot.ProcessUserQuery(userRequest);
+
+}
+
+Console.WriteLine("Connection Terminated. Stay safe.");
 Console.ReadKey();
