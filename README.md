@@ -19,3 +19,20 @@ This is a C# Console Application designed to educate users on essential cybersec
 * **Version Control:** Managed via GitHub with automated CI/CD.
   
 * **Submission Note:** This project meets all Part 1 requirements including logic, multimedia, and CI/CD.
+
+  ## Build Status
+The project utilizes a Continuous Integration (CI) pipeline. Every push to the master branch triggers an automated build to ensure code integrity.
+
+**Current Status:** ✅ Build Passing
+
+---
+## Reference List (Harvard Style)
+
+* **GitHub.** 2026. *GitHub Actions Documentation.* [Online]. Available at: https://docs.github.com/en/actions [Accessed 5 April 2026].
+* **Microsoft.** 2026. *.NET Documentation.* [Online]. Available at: https://learn.microsoft.com/en-us/dotnet/ [Accessed 28 March 2026].
+* **Microsoft.** 2026. *System.Media Namespace.* [Online]. Available at: https://learn.microsoft.com/en-us/dotnet/api/system.media [Accessed 5 April 2026].
+* **The Independent Institute of Education (IIE).** 2026. *Programming 2A: Project of Evidence (POE) Part 1.* [Unpublished Module Manual].
+
+---
+**Developed by:** Wealthundercover
+**Submission Date:** April 2026
