@@ -20,5 +20,25 @@ namespace CybersecurityChatbotGUI
         {
             InitializeComponent();
         }
+
+
+        private void btnSend_Click(object sender, RoutedEventArgs e)
+        {
+            string userInput = txtUserInput.Text.Trim();
+
+            // Don't do anything if the user submitted blank text
+            if (string.IsNullOrEmpty(userInput)) return;
+
+            // 1. Show user message in the chat history
+            txtChatHistory.AppendText($"You: {userInput}\n");
+
+            // 2. Clear the input text box for the next message
+            txtUserInput.Clear();
+
+            // 3. Scroll down to the latest message automatically
+            txtChatHistory.ScrollToEnd();
+
+            // TODO: We will process the chatbot's response here next!
+        }
     }
 }
