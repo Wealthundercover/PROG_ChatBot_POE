@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Media; // <--- This allows sound
-using System.IO;    // <--- This helps find the file folder
+using System.Media; //  sound
+using System.IO;    
 
 namespace CybersecurityChatbot
 {
     public class UserInterface
     {
-        // ADDED: Method to play the audio 
+        // Method to play le audio
         public static void PlayVoiceGreeting()
         {
             try
             {
-                // This creates a reliable path to the folder where the app is running
+               
                 string audioPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "greeting.wav");
 
                 if (File.Exists(audioPath))
@@ -19,7 +19,7 @@ namespace CybersecurityChatbot
                     using (SoundPlayer player = new SoundPlayer(audioPath))
                     {
                         player.Load();
-                        player.PlaySync(); // PlaySync waits for audio to finish before showing the logo
+                        player.PlaySync(); // PlaySync 
                     }
                 }
                 else
@@ -71,7 +71,7 @@ namespace CybersecurityChatbot
             Console.ResetColor();
         }
 
-        //  greeting method
+        
         public static void GreetUser()
         {
             Console.WriteLine("\n[SYSTEM]: Initializing secure connection...");

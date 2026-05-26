@@ -1,17 +1,17 @@
 ﻿using CybersecurityChatbot;
 
-// Multimedia Setup
+
 UserInterface.PlayVoiceGreeting();
 UserInterface.DisplayHeader();
 
-// Initialize the "Brain"
+
 ChatbotEngine bot = new ChatbotEngine();
 
-// Interaction
+
 UserInterface.GreetUser();
 bot.GetUserName();
 
-// Loop to keep the chat going
+// Loop 
 bool isRunning = true;
 while (isRunning)
 {

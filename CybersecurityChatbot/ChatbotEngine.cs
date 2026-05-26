@@ -5,10 +5,10 @@ namespace CybersecurityChatbot
 {
     public class ChatbotEngine
     {
-        // automatic properties to solve a programming problem
+        
         public string UserName { get; set; } = "Agent";
 
-        // Ask for name and personalize
+       
         public void GetUserName()
         {
             Console.Write("[SYSTEM]: Please enter your authorization name: ");
@@ -23,10 +23,10 @@ namespace CybersecurityChatbot
             Console.WriteLine("(You can ask about 'phishing', 'passwords', or 'safe browsing')\n");
         }
 
-        //  Basic Response System & Input Validation
+        
         public void ProcessUserQuery(string? input)
         {
-            // Handle empty entries gracefully
+            
             if (string.IsNullOrWhiteSpace(input))
             {
                 Console.WriteLine("[BOT]: I didn't quite catch that. Could you please type a question?");
@@ -35,12 +35,12 @@ namespace CybersecurityChatbot
 
             string query = input.ToLower();
 
-            // Simulate a "typing" feel with slight delays
+            
             Console.Write("[BOT]: Thinking");
             for (int i = 0; i < 3; i++) { Thread.Sleep(300); Console.Write("."); }
             Console.WriteLine("\n");
 
-            // Responses for specific cybersecurity topics
+            
             if (query.Contains("phishing"))
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
@@ -65,7 +65,7 @@ namespace CybersecurityChatbot
             }
             else
             {
-                // Default response for unsupported queries
+                
                 Console.WriteLine("[BOT]: I didn't quite understand that. Could you rephrase or ask about 'phishing'?");
             }
 
