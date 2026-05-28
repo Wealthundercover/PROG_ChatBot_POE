@@ -51,8 +51,12 @@ The project utilizes a Continuous Integration (CI) pipeline powered by GitHub Ac
 **Current Status:** ✅ Build Passing
 
 ## Submission Deliverables
+* **Part 1:**
 * **Presentation Link (YouTube Walkthrough):** [https://youtu.be/1xM0vhLl3-8?si=Ztyx1Jujo1ZF0UVD](https://youtu.be/1xM0vhLl3-8?si=Ztyx1Jujo1ZF0UVD)
 * **Multimedia Assets Included:** Custom `.wav` greeting files, localized ASCII typography artwork arrays, and comprehensive project solution configuration packages.
+
+* * **Part 2:**
+* **Presentation Link (YouTube Walkthrough):** [https://youtu.be/1xM0vhLl3-8?si=Ztyx1Jujo1ZF0UVD](https://youtu.be/1xM0vhLl3-8?si=Ztyx1Jujo1ZF0UVD)
 
 ---
 
