@@ -5,58 +5,125 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CybersecurityChatbotGUI"
         mc:Ignorable="d"
-        Title="Cybersecurity Assistant v1.0" 
+        Title="CyberShield Security Awareness Command Center v2.0" 
         WindowState="Maximized">
 
-    <Grid Background="#F4F6F9">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="60"/>
-        </Grid.RowDefinitions>
+    <Window.Resources>
+        <Style x:Key="TopicButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#94A3B8"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="Margin" Value="0,3"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#334155"/>
+                    <Setter Property="Foreground" Value="#38BDF8"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
 
-        <Border Grid.Row="0" Background="#1E293B" Padding="15,0">
-            <TextBlock Text="🔒 Cybersecurity Awareness Assistant" 
-                       Foreground="White" 
-                       FontSize="18" 
-                       FontWeight="Bold" 
-                       VerticalAlignment="Center"/>
+    <Grid Background="#0F172A">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="#1E293B" BorderBrush="#334155" BorderThickness="0,0,1,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" VerticalAlignment="Center" Margin="15,0">
+                    <TextBlock Text="🛡️ CYBER AWARENESS" Foreground="#38BDF8" FontSize="11" FontWeight="Bold"/>
+                    <TextBlock Text="Knowledge Base" Foreground="White" FontSize="18" FontWeight="Bold"/>
+                </StackPanel>
+
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="10,0,10,10">
+                    <StackPanel>
+                        <TextBlock Text="🔷 CORE THREATS" Foreground="#A855F7" FontSize="11" FontWeight="Bold" Margin="5,15,5,5"/>
+                        <Button Content="🎣 Phishing Awareness" Style="{StaticResource TopicButtonStyle}" Click="TopicButton_Click" Tag="phishing"/>
+                        <Button Content="🌐 Safe Browsing" Style="{StaticResource TopicButtonStyle}" Click="TopicButton_Click" Tag="browsing"/>
+                        <Button Content="🔑 Password Security" Style="{StaticResource TopicButtonStyle}" Click="TopicButton_Click" Tag="password"/>
+                        <Button Content="🛑 Scam Recognition" Style="{StaticResource TopicButtonStyle}" Click="TopicButton_Click" Tag="scam"/>
+                        <Button Content="🕵️ Privacy Controls" Style="{StaticResource TopicButtonStyle}" Click="TopicButton_Click" Tag="privacy"/>
+
+                        <TextBlock Text="🔶 ADDITIONAL THREATS" Foreground="#F97316" FontSize="11" FontWeight="Bold" Margin="5,20,5,5"/>
+                        <Button Content="📱 Multi-Factor Auth (MFA)" Style="{StaticResource TopicButtonStyle}" Click="TopicButton_Click" Tag="mfa"/>
+                        <Button Content="🎭 Social Engineering" Style="{StaticResource TopicButtonStyle}" Click="TopicButton_Click" Tag="social"/>
+                        <Button Content="📡 Public Wi-Fi Risks" Style="{StaticResource TopicButtonStyle}" Click="TopicButton_Click" Tag="wifi"/>
+                        <Button Content="💾 Data Backup Strategy" Style="{StaticResource TopicButtonStyle}" Click="TopicButton_Click" Tag="backup"/>
+                        <Button Content="⚙️ Software Updates" Style="{StaticResource TopicButtonStyle}" Click="TopicButton_Click" Tag="updates"/>
+                        <Button Content="🔓 Mobile Security" Style="{StaticResource TopicButtonStyle}" Click="TopicButton_Click" Tag="mobile"/>
+                        <Button Content="👥 Social Media Risks" Style="{StaticResource TopicButtonStyle}" Click="TopicButton_Click" Tag="socialmedia"/>
+                        <Button Content="🏢 Physical Security" Style="{StaticResource TopicButtonStyle}" Click="TopicButton_Click" Tag="physical"/>
+                        <Button Content="☣️ Ransomware Defense" Style="{StaticResource TopicButtonStyle}" Click="TopicButton_Click" Tag="ransomware"/>
+                        <Button Content="🏠 Smart Device (IoT) Safety" Style="{StaticResource TopicButtonStyle}" Click="TopicButton_Click" Tag="iot"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
         </Border>
 
-        <ScrollViewer Grid.Row="1" Margin="10" VerticalScrollBarVisibility="Auto">
-            <TextBox x:Name="txtChatHistory" 
-                     IsReadOnly="True" 
-                     TextWrapping="Wrap" 
-                     Background="White" 
-                     BorderBrush="#CBD5E1"
-                     Padding="15" 
-                     FontSize="14"
-                     FontFamily="Consolas"
-                     Text="System: Welcome to your Cybersecurity Assistant! App initialized...&#x0a;"/>
-        </ScrollViewer>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="75"/>
+            </Grid.RowDefinitions>
 
-        <Grid Grid.Row="2" Margin="10,0,10,10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="100"/>
-            </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" Background="#1E293B" Padding="20,0" BorderBrush="#334155" BorderThickness="0,0,0,1">
+                <Grid>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="Cyber Security Awareness BOT" Foreground="White" FontSize="18" FontWeight="Bold"/>
+                        <TextBlock Text="Active Session • Dynamic Color-Coded Awareness Logging" Foreground="#4ADE80" FontSize="12"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
 
-            <TextBox x:Name="txtUserInput" 
-                     Grid.Column="0" 
-                     Padding="8,5" 
-                     FontSize="14" 
-                     VerticalContentAlignment="Center"
-                     BorderBrush="#CBD5E1"
-                     Margin="0,0,10,0"/>
+            <RichTextBox x:Name="rtbChatHistory" 
+                         Grid.Row="1"
+                         Margin="20"
+                         IsReadOnly="True" 
+                         Background="#1E293B" 
+                         BorderBrush="#334155"
+                         Padding="15" 
+                         FontSize="14"
+                         FontFamily="Consolas"
+                         VerticalScrollBarVisibility="Auto">
+                <FlowDocument x:Name="flowDoc"/>
+            </RichTextBox>
 
-            <Button x:Name="btnSend" 
-                    Grid.Column="1" 
-                    Content="Send" 
-                    Background="#2563EB" 
-                    Foreground="White" 
-                    FontWeight="Bold" 
-                    FontSize="14"
-                    Click="btnSend_Click"/>
+            <Grid Grid.Row="2" Margin="20,0,20,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="120"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox x:Name="txtUserInput" 
+                         Grid.Column="0" 
+                         Padding="15,5" 
+                         FontSize="14" 
+                         VerticalContentAlignment="Center"
+                         Background="#1E293B"
+                         Foreground="White"
+                         BorderBrush="#334155"
+                         CaretBrush="White"
+                         Margin="0,0,15,0"/>
+
+                <Button x:Name="btnSend" 
+                        Grid.Column="1" 
+                        Content="Send Message" 
+                        Background="#2563EB" 
+                        Foreground="White" 
+                        FontWeight="Bold" 
+                        FontSize="14"
+                        Click="btnSend_Click"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
