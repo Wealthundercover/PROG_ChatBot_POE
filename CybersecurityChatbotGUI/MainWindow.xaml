@@ -122,6 +122,7 @@
                         Foreground="White" 
                         FontWeight="Bold" 
                         FontSize="14"
+                        IsDefault="True"
                         Click="btnSend_Click"/>
             </Grid>
         </Grid>
