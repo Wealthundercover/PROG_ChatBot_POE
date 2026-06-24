@@ -150,6 +150,16 @@ namespace CybersecurityChatbotGUI
             {
                 responseWriter($"Bot: 🎮 INTERACTIVE THREAT ASSESSMENT SYSTEM ACTIVE.\nType your response key selection (A, B, C, D or TRUE/FALSE) into the command field prompt box directly below to evaluate answers.\n\n" + coreEngine.GetFirstQuizQuestion() + "\n\n", "#A855F7");
             }
+            else if (botResponse.ToUpper().Contains("SECURED"))
+            {
+                // Catches correct answers based on your backend string style
+                responseWriter($"{botResponse}\n\n", "#4ADE80");
+            }
+            else if (botResponse.ToUpper().Contains("COMPROMISED"))
+            {
+                // Catches "DEFENSE COMPROMISED" perfectly and paints it sharp red
+                responseWriter($"{botResponse}\n\n", "#EF4444");
+            }
             else
             {
                 // Stream the standard message content text back into our front-end view layout
