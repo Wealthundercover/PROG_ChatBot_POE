@@ -139,7 +139,7 @@ namespace CybersecurityChatbotGUI
             }
 
             // Let the backend class calculate the clean response string data safely
-            string botResponse = coreEngine.CoreResponseEngine(userInput);
+            string botResponse = coreEngine.CoreResponseEngine(userInput.Trim());
 
             // Handle functional execution keywords sent back from the backend class processor
             if (botResponse == "CONTAINS_TASK_INTENT")
