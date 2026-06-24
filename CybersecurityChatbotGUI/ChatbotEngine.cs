@@ -130,7 +130,9 @@ namespace CybersecurityChatbotGUI
                 new QuizQuestion("What target demographic defines a specialized 'Whaling' campaign?\nA) New Hires\nB) System Admins\nC) C-Suite Executives & Directors", "C", "Whaling vectors mimic or target top leaders to extract transactions."),
                 new QuizQuestion("Open, unencrypted public Wi-Fi access configurations can expose web traffic to packet-sniffing exploits. (True or False)", "TRUE", "Unsecured Wi-Fi allows near proximity tools to capture streaming traffic data."),
                 new QuizQuestion("What strategy provides superior structural password defense against brute-force attacks?\nA) Short complex word\nB) 14+ character passphrases combining unique phrases", "B", "Length scales password complexity exponentially, rendering brute force math impractical."),
-                new QuizQuestion("Multi-Factor Authentication (MFA) remains vital because it stops logins even if a password is stolen. (True or False)", "TRUE", "MFA enforces a secondary, completely separate validation layer.")
+                new QuizQuestion("Multi-Factor Authentication (MFA) remains vital because it stops logins even if a password is stolen. (True or False)", "TRUE", "MFA enforces a secondary, completely separate validation layer."),
+                new QuizQuestion("What type of attack involves an adversary sniffing network traffic on public networks to intercept unencrypted data streams?\nA) Social Engineering\nB) Adversary-in-the-Middle (AitM)\nC) Ransomware", "B", "Adversary-in-the-Middle tactics intercept streaming wireless traffic packets directly."),
+                new QuizQuestion("A clean-desk policy means locking away sensitive physical documentation when moving away from your workstation. (True or False)", "TRUE", "Physical data handling protocols require securing active assets to mitigate internal tailgating risks.")
             };
 
             LogSystemActivityEntry("Engine Architecture Synced & Online.");
