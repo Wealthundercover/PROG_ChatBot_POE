@@ -212,7 +212,7 @@ namespace CybersecurityChatbotGUI
             coreEngine.LogSystemActivityEntry($"Manual Action Form Execution: Added custom record index row item: '{titleStr}'");
 
             TxtTaskTitle.Clear();
-            TxtTaskDesc.Clear();
+            TxtTaskDesc.Text = "No supplementary analysis text provided.";
             TxtTaskReminder.Text = "Remind me in 3 days";
         }
 
