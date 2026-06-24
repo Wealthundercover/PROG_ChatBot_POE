@@ -133,7 +133,7 @@ namespace CybersecurityChatbotGUI
                 });
 
                 coreEngine.LogSystemActivityEntry($"Task Committed Via Conversational Flow Pattern: '{coreEngine.NlpPendingTaskTitle}'");
-                responseWriter($"Bot: ✅ Record generated successfully into grid dataset matrix: '{coreEngine.NlpPendingTaskTitle}' with deadline requirement parameter mapping set to: '{userInput}'.\n\n", "#10B981");
+                responseWriter($"Bot: ⚡ [AUTOMATED TASK INJECTION]\n>>> Status: Record generated successfully into grid dataset matrix.\n>>> Component: '{coreEngine.NlpPendingTaskTitle}'\n>>> Deadline Parameter: '{userInput}'\n\n", "#10B981");
                 rtbChatHistory.ScrollToEnd();
                 return;
             }
