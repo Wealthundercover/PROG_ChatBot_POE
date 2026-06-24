@@ -36,6 +36,7 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="70"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
@@ -44,7 +45,12 @@
                     <TextBlock Text="Knowledge Base" Foreground="White" FontSize="18" FontWeight="Bold"/>
                 </StackPanel>
 
-                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="10,0,10,10">
+                <StackPanel Grid.Row="1" Margin="10,0,10,10">
+                    <Button Content="💬 Core Chat Terminal" Height="32" Margin="0,2" Background="#334155" Foreground="White" BorderThickness="0" Click="BtnShowChat_Click"/>
+                    <Button Content="📋 View Task Records Grid" Height="32" Margin="0,2" Background="#2563EB" Foreground="White" BorderThickness="0" FontWeight="Bold" Click="BtnShowTasks_Click"/>
+                </StackPanel>
+
+                <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Margin="10,0,10,10">
                     <StackPanel>
                         <TextBlock Text="🔷 CORE THREATS" Foreground="#A855F7" FontSize="11" FontWeight="Bold" Margin="5,15,5,5"/>
                         <Button Content="🎣 Phishing Awareness" Style="{StaticResource TopicButtonStyle}" Click="TopicButton_Click" Tag="phishing"/>
@@ -80,23 +86,69 @@
                 <Grid>
                     <StackPanel VerticalAlignment="Center">
                         <TextBlock Text="Cyber Security Awareness BOT" Foreground="White" FontSize="18" FontWeight="Bold"/>
-                        <TextBlock Text="Active Session • Dynamic Color-Coded Awareness Logging" Foreground="#4ADE80" FontSize="12"/>
+                        <TextBlock x:Name="lblSubHeader" Text="Active Session • Dynamic Color-Coded Awareness Logging" Foreground="#4ADE80" FontSize="12"/>
                     </StackPanel>
                 </Grid>
             </Border>
 
-            <RichTextBox x:Name="rtbChatHistory" 
-                         Grid.Row="1"
-                         Margin="20"
-                         IsReadOnly="True" 
-                         Background="#1E293B" 
-                         BorderBrush="#334155"
-                         Padding="15" 
-                         FontSize="14"
-                         FontFamily="Consolas"
-                         VerticalScrollBarVisibility="Auto">
-                <FlowDocument x:Name="flowDoc"/>
-            </RichTextBox>
+            <Grid Grid.Row="1" Margin="20">
+                <RichTextBox x:Name="rtbChatHistory" 
+                             Visibility="Visible"
+                             IsReadOnly="True" 
+                             Background="#1E293B" 
+                             BorderBrush="#334155"
+                             Padding="15" 
+                             FontSize="14"
+                             FontFamily="Consolas"
+                             VerticalScrollBarVisibility="Auto">
+                    <FlowDocument x:Name="flowDoc"/>
+                </RichTextBox>
+
+                <Grid x:Name="PanelTasksView" Visibility="Collapsed">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <ListView x:Name="LvwTasksDisplay" Grid.Row="0" Background="#1E293B" Foreground="White" BorderBrush="#334155">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" Width="50"/>
+                                <GridViewColumn Header="Task Security Action Title" DisplayMemberBinding="{Binding Title}" Width="250"/>
+                                <GridViewColumn Header="Defensive Context Description" DisplayMemberBinding="{Binding Description}" Width="350"/>
+                                <GridViewColumn Header="Alert Frame" DisplayMemberBinding="{Binding ReminderTime}" Width="160"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                    <StackPanel Grid.Row="1" Margin="0,15,0,0">
+                        <TextBlock Text="MANUAL THREAT MITIGATION RECORD INJECTION FORM" Foreground="#94A3B8" FontSize="11" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                                <TextBlock Text="Task Action Title" Foreground="#94A3B8" FontSize="12" Margin="0,0,0,4"/>
+                                <TextBox x:Name="TxtTaskTitle" Background="#1E293B" Foreground="White" BorderBrush="#334155" Height="32" VerticalContentAlignment="Center" Padding="5,0"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Margin="0,0,10,0">
+                                <TextBlock Text="Defensive Description" Foreground="#94A3B8" FontSize="12" Margin="0,0,0,4"/>
+                                <TextBox x:Name="TxtTaskDesc" Background="#1E293B" Foreground="White" BorderBrush="#334155" Height="32" VerticalContentAlignment="Center" Padding="5,0"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="Reminder Timeframe" Foreground="#94A3B8" FontSize="12" Margin="0,0,0,4"/>
+                                <TextBox x:Name="TxtTaskReminder" Text="Remind me in 3 days" Background="#1E293B" Foreground="White" BorderBrush="#334155" Height="32" VerticalContentAlignment="Center" Padding="5,0"/>
+                            </StackPanel>
+                        </Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
+                            <Button Content="Purge Selected Task Entry" Click="BtnDeleteSelectedTask_Click" Width="180" Height="32" Background="#EF4444" Foreground="White" BorderThickness="0" Margin="0,0,10,0" FontWeight="Bold"/>
+                            <Button Content="➕ Commit Task Record Row" Click="BtnManualAddTask_Click" Width="200" Height="32" Background="#10B981" Foreground="White" BorderThickness="0" FontWeight="Bold"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Grid>
 
             <Grid Grid.Row="2" Margin="20,0,20,20">
                 <Grid.ColumnDefinitions>
