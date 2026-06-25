@@ -5,7 +5,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
-
 namespace CybersecurityChatbotGUI
 {
     // DELEGATE DEFINITION
@@ -33,6 +32,7 @@ namespace CybersecurityChatbotGUI
         public MainWindow()
         {
             InitializeComponent();
+            DatabaseHelper.InitializeDatabase();
 
             GridCyberTasks = new ObservableCollection<UI_CyberTask>();
             LvwTasksDisplay.ItemsSource = GridCyberTasks;
@@ -131,6 +131,8 @@ namespace CybersecurityChatbotGUI
                     Description = coreEngine.NlpPendingTaskDesc,
                     ReminderTime = userInput
                 });
+
+                DatabaseHelper.SaveTask(coreEngine.NlpPendingTaskTitle, coreEngine.NlpPendingTaskDesc, userInput);
 
                 coreEngine.LogSystemActivityEntry($"Task Committed Via Conversational Flow Pattern: '{coreEngine.NlpPendingTaskTitle}'");
                 responseWriter($"Bot: ⚡ [AUTOMATED TASK INJECTION]\n>>> Status: Record generated successfully into grid dataset matrix.\n>>> Component: '{coreEngine.NlpPendingTaskTitle}'\n>>> Deadline Parameter: '{userInput}'\n\n", "#10B981");
